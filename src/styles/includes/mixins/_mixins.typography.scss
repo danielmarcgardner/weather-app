@@ -1,0 +1,32 @@
+@mixin weight($weight) {
+  @if $weight == 'bold' {
+    font-weight: 900;
+  } @else if $weight == 'semibold' {
+    font-weight: 700;
+  } @else if $weight == 'medium' {
+    font-weight: 500;
+  } @else if $weight == 'regular' {
+    font-weight: 300;
+  }  @else if $weight == 'light' {
+    font-weight: 100;
+  }
+}
+
+// font size mixin for defining scale
+@mixin size($type) {
+  @if $type == 'h1' {
+    font-size: 4.6rem;
+  } @else if $type == 'h2' {
+    font-size: 3.2rem;
+  } @else if $type == 'h3' {
+    font-size: 2.4rem;
+  } @else if $type == 'h4' {
+    font-size: 1.8rem;
+  } @else if $type == 'body' {
+    font-size: 1.6rem;
+  } @else if $type == 'small' {
+    font-size: 1.4rem;
+  } @else if $type == 'vsmall' {
+    font-size: 1.2rem;
+  }
+}
