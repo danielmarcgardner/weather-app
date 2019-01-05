@@ -1,0 +1,24 @@
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+import Api from '../utils/api';
+import rootReducer from './reducers';
+
+const finalCreateStore = compose(
+  applyMiddleware(thunk.withExtraArgument({ Api })),
+  process.env.NODE_ENV === 'development' && window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f
+)(createStore);
+
+function configureStore(preloadedState) {
+  const store = finalCreateStore(rootReducer, preloadedState);
+
+  if (module.hot) {
+    // Enable Webpack hot module replacement for reducers
+    module.hot.accept('./reducers', () => {
+      store.replaceReducer(rootReducer);
+    });
+  }
+
+  return store;
+}
+
+export default configureStore();
