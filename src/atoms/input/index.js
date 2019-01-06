@@ -7,6 +7,7 @@ export class Input extends Component {
     super(props);
     this.onFocus = this.onFocus.bind(this);
     this.onBlur = this.onBlur.bind(this);
+    this.onChange = this.onChange.bind(this);
     this.state = {
       focus: false
     };
@@ -44,6 +45,7 @@ export class Input extends Component {
             placeholder={ placeholder }
             value={ value }
             className="input__input"
+            onChange={ this.onChange }
           />
         </div>
         {error && <span className="input__error">{error}</span>}

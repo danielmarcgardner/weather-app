@@ -1,0 +1,31 @@
+@import '../../styles/includes/includes.index.scss';
+
+.button {
+  background-color: $darkgrey;
+  color: $white;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  width: fit-content;
+  display: inline-block;
+
+  &.is-blue {
+    background-color: $blue;
+  }
+  &.is-lightgrey {
+    background-color: $lightgrey;
+  }
+  &.is-red {
+    background-color: $red;
+  }
+  &.is-darkblue {
+    background-color: $darkblue;
+  }
+  &.is-green {
+    background-color: $green;
+  }
+  &.is-disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}
