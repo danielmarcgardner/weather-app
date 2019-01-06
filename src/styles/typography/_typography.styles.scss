@@ -7,3 +7,44 @@ html {
 body {
   @include size(body);
 }
+
+h1 {
+  @include size(h1);
+  @include weight(bold);
+}
+
+h2 {
+  @include size(h2);
+  @include weight(semibold);
+}
+
+h3 {
+  @include size(h3);
+  @include weight(semibold);
+}
+
+h4 {
+  @include size(h4);
+  @include weight(semibold);
+}
+
+h5 {
+  @include size(h5);
+  @include weight(medium);
+}
+
+p {
+  @include size(body);
+  @include weight(regular);
+}
+
+a, .typ--link {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  @include weight(semibold);
+  &:hover {
+    text-decoration: underline;
+  }
+}
