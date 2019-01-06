@@ -1,8 +1,6 @@
 import * as weatherConstants from '../constants/weatherConstants';
 
-const initialState = {};
-
-export default (action = {}, state = initialState) => {
+export default function WeatherReducer(state = {}, action = {}) {
   switch (action.type) {
     case weatherConstants.RECEIVE_ZIP: {
       return { ...state, [action.zip]: action.data };
@@ -15,4 +13,4 @@ export default (action = {}, state = initialState) => {
     default:
       return state;
   }
-};
+}
