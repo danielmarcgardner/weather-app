@@ -22,19 +22,16 @@ export class Input extends Component {
   }
 
   onChange(e) {
-    const { setFormState, validator, formKey } = this.props;
+    const { setFormState, formKey } = this.props;
     const value = e.target.value;
-    const validation = value && typeof validator === Function ? validator(value) : null;
-
-    const changes = { [formKey] : { value, error: validation } };
+    const changes = { [formKey] : value };
 
     return setFormState(changes);
   }
 
   render() {
     const { focus } = this.state;
-    const { placeholder, inputState, className } = this.props;
-    const { error, value } = inputState;
+    const { placeholder, inputState, className, formKey, error } = this.props;
 
     return (
       <div className={ `input ${className ? className : ''}` }>
@@ -43,7 +40,7 @@ export class Input extends Component {
             onFocus={ this.onFocus }
             onBlur={ this.onBlur }
             placeholder={ placeholder }
-            value={ value }
+            value={ inputState[formKey] }
             className="input__input"
             onChange={ this.onChange }
           />
@@ -56,16 +53,16 @@ export class Input extends Component {
 
 Input.propTypes = {
   setFormState: func,
-  validator: func,
   formKey: string,
   placeholder: string,
   className: string,
-  inputState: object
+  inputState: object,
+  error: string
 };
 
 Input.defaultProps = {
   setFormState: () => { console.error('Missing setFormState function!!'); },
-  inputState: { value: '', error: null }
+  inputState: {}
 };
 
 export default Input;
