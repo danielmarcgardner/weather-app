@@ -3,7 +3,7 @@ body, a {
 }
 
 body {
-  background-color: $darkgrey;
+  background-color: $grey;
   color: $black;
 }
 
@@ -18,4 +18,8 @@ a, .typ--link {
     left: 0;
     width: 100%;
   }
+}
+
+.app {
+  padding: 4rem;
 }
