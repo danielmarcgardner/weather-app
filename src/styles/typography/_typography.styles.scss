@@ -1,6 +1,9 @@
 html {
   font-size: 10px;
   line-height: 1;
-  @include weight(regular)
-  @include size(body)
+  @include weight(regular);
+}
+
+body {
+  @include size(body);
 }
