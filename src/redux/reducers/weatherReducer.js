@@ -1,9 +1,18 @@
 import * as weatherConstants from '../constants/weatherConstants';
+import { findIndex } from '../../utils/find';
 
-export default function WeatherReducer(state = {}, action = {}) {
+const initialState = { weatherZips: [] };
+
+export default function WeatherReducer(state = initialState, action = {}) {
   switch (action.type) {
     case weatherConstants.RECEIVE_ZIP: {
-      return { ...state, [action.zip]: action.data };
+      const index = findIndex(state.weatherZips, (weatherZip) => weatherZip.zip === action.data.zip);
+      if (index === -1) {
+        return { ...state, weatherZips:[...state.weatherZips, action.data] };
+      }
+      const copy = state.weatherZips.slice();
+      copy.splice(index, 1, action.data);
+      return { ...state, weatherZips: copy };
     }
     case weatherConstants.DELETE_ZIP: {
       const newState = { ...state };

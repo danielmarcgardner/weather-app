@@ -1,5 +1,5 @@
 body, a {
-  color: $black;
+  color: $darkblue;
 }
 
 body {
@@ -7,19 +7,7 @@ body {
   color: $black;
 }
 
-a, .typ--link {
-  position: relative;
-  cursor: pointer;
-  display: inline-block;
-  &:hover:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-  }
-}
-
 .app {
+  @extend %container;
   padding: 4rem;
 }

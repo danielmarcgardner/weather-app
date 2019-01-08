@@ -1,1 +1,10 @@
 @import '../../styles/includes/includes.index.scss';
+
+.landing {
+  &__search {
+    @extend %flex-center;
+    border: 0.1rem solid $darkgrey;
+    padding: 2rem 0rem;
+    border-radius: 0.5rem;
+  }
+}

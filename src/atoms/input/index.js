@@ -61,6 +61,7 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
+  //eslint-disable-next-line
   setFormState: () => { console.error('Missing setFormState function!!'); },
   inputState: {}
 };

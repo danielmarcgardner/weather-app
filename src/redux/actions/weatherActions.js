@@ -3,8 +3,7 @@ import * as weatherConstants from '../constants/weatherConstants';
 //Actions
 const receiveWeather = (zip, data) => ({
   type: weatherConstants.RECEIVE_ZIP,
-  zip,
-  data
+  data: { ...data, zip }
 });
 
 //Thunks

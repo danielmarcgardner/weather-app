@@ -1,0 +1,42 @@
+@import '../../styles/includes/includes.index.scss';
+
+.zipcard {
+  background-color: $lightgrey;
+  width: 25rem;
+  padding: 1rem;
+  height: 30rem;
+  color: $blue;
+  border-radius: 0.5rem;
+  &__close {
+    position: absolute;
+    transform: rotate(45deg);
+    @include size(h3);
+    margin-left: 21.5rem;
+    margin-top: -1rem;
+    color: $red;
+    opacity: 0.5;
+    &:hover {
+      cursor: pointer;
+      opacity: 1;
+    }
+  }
+  &__header {
+    text-align: center;
+    &--city {
+      @include weight(semibold);
+    }
+    &--zip {
+      @include weight(semibold);
+    }
+  }
+  &__current {
+    text-align: center;
+    &--link {
+      color: $red;
+    }
+  }
+  &__time {
+    position: absolute;
+    margin-top: 2rem;
+  }
+}
