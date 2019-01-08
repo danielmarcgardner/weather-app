@@ -2,22 +2,33 @@
 
 .zipcard {
   background-color: $lightgrey;
-  width: 25rem;
+  width: 24rem;
   padding: 1rem;
   height: 30rem;
   color: $blue;
   border-radius: 0.5rem;
+  margin: 1rem;
+
   &__close {
     position: absolute;
     transform: rotate(45deg);
     @include size(h3);
-    margin-left: 21.5rem;
+    margin-left: 20.5rem;
     margin-top: -1rem;
     color: $red;
     opacity: 0.5;
     &:hover {
       cursor: pointer;
       opacity: 1;
+    }
+  }
+  &__notfound {
+    text-align: center;
+    &--zip {
+      @include weight(semibold);
+    }
+    &--message {
+      @include weight(regular);
     }
   }
   &__header {

@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { func, array } from 'prop-types';
-import { getWeatherByZipCode } from '../../redux/actions/weatherActions';
+import { getWeatherByZipCode, removeZip } from '../../redux/actions/weatherActions';
 import ZipSearch from '../../components/zip-search';
 import ZipCard from '../../components/zip-card';
 import './landing.css';
 
 export class Landing extends Component {
   render() {
-    const { getWeatherByZipCode, weather } = this.props;
+    const { getWeatherByZipCode, weather, removeZip } = this.props;
     return (
       <div className="landing">
         <div className="landing__welcome mb1">
@@ -19,7 +19,7 @@ export class Landing extends Component {
           <ZipSearch search={ getWeatherByZipCode } />
         </div>
         <div className="landing__results">
-          {weather.length > 0 && weather.map(weather => <ZipCard { ...weather } remove={ (val) => console.log(val) } key={ `weather-${weather.zip}` } />)}
+          {weather.length > 0 && weather.map(weather => <ZipCard { ...weather } remove={ removeZip } key={ `weather-${weather.zip}` } />)}
         </div>
       </div>
     );
@@ -31,12 +31,14 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  getWeatherByZipCode
+  getWeatherByZipCode,
+  removeZip
 };
 
 Landing.propTypes = {
   getWeatherByZipCode: func,
-  weather: array
+  weather: array,
+  removeZip: func
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Landing);

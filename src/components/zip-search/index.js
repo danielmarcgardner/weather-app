@@ -29,8 +29,8 @@ export class ZipSearch extends Component {
     if (error) {
       return this.setState({ error: `Form error: ${error}` });
     }
-    this.setState({ error: '' });
-    return search(zip);
+    search(zip);
+    return this.setState({ error: '', zip: '' });
   }
 
   render() {
