@@ -20,7 +20,8 @@ export class ZipSearch extends Component {
     this.setState(val);
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+    e && e.preventDefault();
     const { zip } = this.state;
     const { search } = this.props;
     const { multiple, presence, zipCode } = validators;
@@ -35,7 +36,7 @@ export class ZipSearch extends Component {
   render() {
     const { error } = this.state;
     return (
-      <div className="zip-search">
+      <form className="zip-search" onSubmit={ this.handleSubmit }>
         <Input
           className="zip-search__input"
           setFormState={ this.setFormState }
@@ -50,7 +51,7 @@ export class ZipSearch extends Component {
           color="blue"
           text="Search"
         />
-      </div>
+      </form>
     );
   }
 }
