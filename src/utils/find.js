@@ -7,3 +7,13 @@ export const findIndex = (arr, callback) => {
   });
   return index;
 };
+
+export const find = (arr, callback) => {
+  let found = null;
+  arr.forEach((item) => {
+    if (callback(item)) {
+      found = item;
+    }
+  });
+  return found;
+};

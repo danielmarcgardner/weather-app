@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import Routes from '../routes';
+import Routes from '../../routes';
+import ZipRefreshWrapper from '../zip-refresh-wrapper';
 
-import '../styles/core.css';
+import '../../styles/core.css';
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <div className="app">
-          <Routes />
+          <ZipRefreshWrapper interval={ 60000 }>
+            <Routes />
+          </ZipRefreshWrapper>
         </div>
       </BrowserRouter>
     );

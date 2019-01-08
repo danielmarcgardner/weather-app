@@ -7,4 +7,9 @@
     padding: 2rem 0rem;
     border-radius: 0.5rem;
   }
+  &__results {
+    @extend %flex;
+    width: 100%;
+    flex-flow: row wrap;
+  }
 }

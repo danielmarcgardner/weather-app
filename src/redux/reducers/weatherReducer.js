@@ -15,9 +15,10 @@ export default function WeatherReducer(state = initialState, action = {}) {
       return { ...state, weatherZips: copy };
     }
     case weatherConstants.DELETE_ZIP: {
-      const newState = { ...state };
-      delete newState[action.zip];
-      return { ...newState };
+      const copy = state.weatherZips.slice();
+      const index = findIndex(state.weatherZips, (weatherZip) => weatherZip.zip === action.zip);
+      copy.splice(index, 1);
+      return { ...state, weatherZips: copy };
     }
     default:
       return state;
