@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { func, string, arrayOf, number, node } from 'prop-types';
 import { getWeatherByZipCode } from '../../redux/actions/weatherActions';
 
@@ -55,4 +56,4 @@ ZipRefreshWrapper.defaultProps = {
   interval: 300000
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ZipRefreshWrapper);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ZipRefreshWrapper));

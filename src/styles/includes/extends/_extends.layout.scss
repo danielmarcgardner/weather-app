@@ -1,3 +1,4 @@
+@import '../variables/variables.index.scss';
 
 %container {
   margin-left: auto;
@@ -13,4 +14,14 @@
   @extend %flex;
   justify-content: center;
   align-items: center;
+}
+
+%card {
+  background-color: $lightgrey;
+  width: 24rem;
+  padding: 1rem;
+  height: 30rem;
+  color: $blue;
+  border-radius: 0.5rem;
+  margin: 1rem;
 }
