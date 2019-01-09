@@ -64,7 +64,7 @@ export class FiveDay extends Component {
         { propsForHero && <div className="fiveday__hero">
           <HeroWeatherDisplay { ...propsForHero } close={ this.closeHero } />
         </div>}
-        <div className="fiveday__links my2" onClick={ this.returnHome }>Back to main screen</div>
+        <div className="fiveday__links my2" onClick={ this.returnHome }>Return home</div>
         <div className="fiveday__links" onClick={ this.closeAndRemoveZip }>Delete weather bookmark and return home</div>
       </div>
     );
