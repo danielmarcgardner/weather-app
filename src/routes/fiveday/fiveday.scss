@@ -1,0 +1,18 @@
+@import '../../styles/includes/includes.index.scss';
+
+.fiveday {
+  &__header {
+    text-align: center;
+  }
+  &__days {
+    @extend %flex;
+    flex-flow: row wrap;
+  }
+  &__links {
+    display: block;
+    @include weight(semibold);
+    color: $red;
+    text-align: center;
+    cursor: pointer;
+  }
+}

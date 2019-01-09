@@ -1,13 +1,7 @@
 @import '../../styles/includes/includes.index.scss';
 
 .zipcard {
-  background-color: $lightgrey;
-  width: 24rem;
-  padding: 1rem;
-  height: 30rem;
-  color: $blue;
-  border-radius: 0.5rem;
-  margin: 1rem;
+  @extend %card;
 
   &__close {
     position: absolute;
