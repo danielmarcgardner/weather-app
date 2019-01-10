@@ -8,6 +8,7 @@ export class ZipRefreshWrapper extends Component {
   constructor(props) {
     super(props);
     this.refreshData = this.refreshData.bind(this);
+    this.refresh = null;
   }
 
   componentDidMount() {
@@ -36,7 +37,7 @@ export class ZipRefreshWrapper extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   weatherZips: state.weather.weatherZips.map(z => z.zip)
 });
 
@@ -53,7 +54,7 @@ ZipRefreshWrapper.propTypes = {
 
 ZipRefreshWrapper.defaultProps = {
   weatherZips: [],
-  interval: 300000
+  interval: 30000
 };
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ZipRefreshWrapper));

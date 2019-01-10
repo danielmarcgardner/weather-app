@@ -26,7 +26,7 @@ export class Landing extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   weather: state.weather.weatherZips
 });
 

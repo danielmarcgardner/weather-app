@@ -41,6 +41,24 @@
     "lint:fix": "eslint . --fix --quiet",
     "lint:sass": "sass-lint 'src/styles/**/*.scss' --verbose --no-exit"
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/components/**/*.js",
+      "src/containers/**/*.js",
+      "src/routes/**/*.js",
+      "src/redux/reducers/**/*.js",
+      "src/redux/actions/**/*.js",
+      "src/utils/**/*.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 75,
+        "functions": 75,
+        "lines": 75,
+        "statements": 75
+      }
+    }
+  },
   "eslintConfig": {
     "extends": "react-app"
   },

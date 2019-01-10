@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="app">
-          <ZipRefreshWrapper interval={ 60000 }>
+          <ZipRefreshWrapper interval={ 30000 }>
             <Routes />
           </ZipRefreshWrapper>
         </div>

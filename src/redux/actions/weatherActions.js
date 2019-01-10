@@ -15,16 +15,13 @@ export const removeZip = zip => ({
 });
 
 //Thunks
-export const getWeatherByZipCode = (zip) => async (dispatch, getState, { Api }) => {
+export const getWeatherByZipCode = (zip, timestamp = moment()) => async (dispatch, getState, { Api }) => {
   const currentArrayOfWeather = getState().weather.weatherZips;
   const foundInState = find(currentArrayOfWeather, (current) => current.zip === zip);
-  if (foundInState) {
-    console.log(isMoreThan5MinOld(foundInState.fetchedAt));
-  }
   if ((foundInState && !foundInState.error && isMoreThan5MinOld(foundInState.fetchedAt)) || !foundInState) {
     try {
       const data = await Api.getWeatherByZipCode(zip);
-      return dispatch(receiveWeather(zip, data, moment()));
+      return dispatch(receiveWeather(zip, data, timestamp));
     } catch (e) {
       dispatch(receiveWeather(zip, { error: true }));
     }
