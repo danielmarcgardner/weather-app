@@ -2,6 +2,7 @@ import React from 'react';
 import { func, string, bool } from 'prop-types';
 import './button.css';
 
+//Returns a standard button atom.
 export const Button = ({ onClick, className, disabled, text, color }) => (
   <button
     onClick={ onClick ? onClick : null }

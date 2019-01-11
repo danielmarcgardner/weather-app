@@ -4,9 +4,12 @@ import { Link } from 'react-router-dom';
 import moment from 'moment';
 import './zip-card.css';
 
+//Returns the card on the landing page that is the starting point for the viewing more information about the zips weather.
 export const ZipCard = ({ location, current, zip, remove, fetchedAt }) => {
+  //Abstracted the remove item since its used in both
   const removeItem = <span className="zipcard__close" onClick={ () => remove(zip) }>+</span>;
   if (!location) {
+    //This is a catch default for if the zipcode was not found by the API
     return (<div className="zipcard">
       {removeItem}
       <div className=" zipcard__notfound">

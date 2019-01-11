@@ -1,5 +1,5 @@
 import moment from 'moment';
-
+//Mock test data from the API
 export default [{
   zip: '94122',
   fetchedAt: moment().subtract(5, 'minutes'),

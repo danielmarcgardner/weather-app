@@ -1,3 +1,4 @@
+//Handy utility function for finding index of an item.
 export const findIndex = (arr, callback) => {
   let index = -1;
   arr.forEach((item, i) => {
@@ -8,6 +9,7 @@ export const findIndex = (arr, callback) => {
   return index;
 };
 
+//Handy utility function for finding an item.
 export const find = (arr, callback) => {
   let found = null;
   arr.forEach((item) => {
