@@ -12,6 +12,8 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+//I left the service worker as unregistered for now. If this were deployed I would consider registering the service worker to make the app more performant.
+
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: http://bit.ly/CRA-PWA

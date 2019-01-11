@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { func, string, object } from 'prop-types';
 import './input.css';
 
+//Returns a standard input atom.
 export class Input extends Component {
   constructor(props){
     super(props);
@@ -9,24 +10,26 @@ export class Input extends Component {
     this.onBlur = this.onBlur.bind(this);
     this.onChange = this.onChange.bind(this);
     this.state = {
-      focus: false
+      focus: false //Keep track of focusing state to know when to focus element
     };
   }
 
   onFocus(){
+    //When onfocus is called set state to focused so the input can be focused
     this.setState({ focus: true });
   }
 
   onBlur(){
+    //When user exits out of the input return to unfocused state
     this.setState({ focus: false });
   }
 
   onChange(e) {
     const { setFormState, formKey } = this.props;
-    const value = e.target.value;
+    const value = e.target.value; //Take the value and set the parent form state when there is a change
     const changes = { [formKey] : value };
 
-    return setFormState(changes);
+    return setFormState(changes); //Set parent form state with formKey and value
   }
 
   render() {
@@ -45,6 +48,7 @@ export class Input extends Component {
             onChange={ this.onChange }
           />
         </div>
+        {/* If there is an error display error */}
         {error && <span className="input__error">{error}</span>}
       </div>
     );

@@ -7,7 +7,7 @@
     font-weight: 500;
   } @else if $weight == 'regular' {
     font-weight: 300;
-  }  @else if $weight == 'light' {
+  } @else if $weight == 'light' {
     font-weight: 100;
   }
 }
@@ -23,7 +23,7 @@
   } @else if $type == 'h4' {
     font-size: 2.4rem;
   } @else if $type == 'h5' {
-    font-size: 2.0rem;
+    font-size: 2rem;
   } @else if $type == 'body' {
     font-size: 1.6rem;
   } @else if $type == 'small' {

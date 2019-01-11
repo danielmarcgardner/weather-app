@@ -1,7 +1,7 @@
 html {
+  @include weight(regular);
   font-size: 10px;
   line-height: 1;
-  @include weight(regular);
 }
 
 body {
@@ -38,12 +38,14 @@ p {
   @include weight(regular);
 }
 
-a, .typ--link {
+a,
+.typ--link {
+  @include weight(semibold);
   position: relative;
   cursor: pointer;
   display: inline-block;
   text-decoration: none;
-  @include weight(semibold);
+
   &:hover {
     text-decoration: underline;
   }
