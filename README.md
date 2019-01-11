@@ -18,7 +18,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 4. `touch .env`
 5. Add `REACT_APP_API_KEY= API KEY HERE` to .env
 6. `npm start`
-7. Visit app at [localhost:8000](http://localhost:8000/) (with the new React scripts on occasion it is necessary to reload the page in development mode)
+7. Visit app at [localhost:8000](http://localhost:8000/) (with the new React scripts on occasion it is necessary to reload the page in development mode when it first loads)
 
 ### Scripts
 
