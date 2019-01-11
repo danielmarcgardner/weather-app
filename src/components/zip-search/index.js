@@ -47,7 +47,6 @@ export class ZipSearch extends Component {
         />
         <Button
           className="zip-search__button ml2"
-          onClick={ this.handleSubmit }
           color="blue"
           text="Search"
         />

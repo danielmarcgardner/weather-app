@@ -55,7 +55,7 @@ export class FiveDay extends Component {
     return (
       <div className="fiveday">
         <div className="fiveday__header mb2">
-          {weatherZip && <h3 className="fiveday__header--text">5 Day Forcast: {weatherZip.zip}</h3>}
+          {weatherZip && <h3 className="fiveday__header--text">5 Day Forecast: {weatherZip.zip}</h3>}
           {weatherZip && <h5 className="fiveday__header--updated">{moment(weatherZip.fetchedAt).calendar()}</h5>}
         </div>
         <div className="fiveday__days">
@@ -71,7 +71,7 @@ export class FiveDay extends Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
+export const mapStateToProps = (state, ownProps) => {
   const weatherZip = find(state.weather.weatherZips, (z) => z.zip === ownProps.match.params.zip);
   return { weatherZip };
 };
