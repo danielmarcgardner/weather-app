@@ -1,0 +1,47 @@
+@import '../../styles/includes/includes.index.scss';
+
+.zipcard {
+  @extend %card;
+
+  &__close {
+    position: absolute;
+    transform: rotate(45deg);
+    @include size(h3);
+    margin-left: 20.5rem;
+    margin-top: -1rem;
+    color: $red;
+    opacity: 0.5;
+    &:hover {
+      cursor: pointer;
+      opacity: 1;
+    }
+  }
+  &__notfound {
+    text-align: center;
+    &--zip {
+      @include weight(semibold);
+    }
+    &--message {
+      @include weight(regular);
+    }
+  }
+  &__header {
+    text-align: center;
+    &--city {
+      @include weight(semibold);
+    }
+    &--zip {
+      @include weight(semibold);
+    }
+  }
+  &__current {
+    text-align: center;
+    &--link {
+      color: $red;
+    }
+  }
+  &__time {
+    position: absolute;
+    margin-top: 2rem;
+  }
+}

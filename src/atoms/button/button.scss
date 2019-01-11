@@ -3,11 +3,18 @@
 .button {
   background-color: $darkgrey;
   color: $white;
-  padding: 1rem 1.5rem;
-  border-radius: 1rem;
+  padding: 0.35em 1em;
+  border-radius: 0.5rem;
   cursor: pointer;
   width: fit-content;
   display: inline-block;
+  text-align: center;
+  line-height: 1;
+  height: 3rem;
+  border: 0.1rem solid transparent;
+  &:focus {
+    border: 0.1rem solid $darkgrey;
+  }
 
   &.is-blue {
     background-color: $blue;

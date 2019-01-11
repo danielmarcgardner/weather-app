@@ -1,0 +1,6 @@
+@import '../../styles/includes/includes.index.scss';
+
+.whoops {
+  @extend %flex-center;
+  flex-direction: column;
+}

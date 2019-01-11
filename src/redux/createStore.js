@@ -3,8 +3,11 @@ import thunk from 'redux-thunk';
 import Api from '../utils/api';
 import rootReducer from './reducers';
 
+//Redux Boilerplate
 const finalCreateStore = compose(
+  //Passed in API as extra argument to call it in thunks
   applyMiddleware(thunk.withExtraArgument({ Api })),
+  //Added for redux devtools
   process.env.NODE_ENV === 'development' && window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f
 )(createStore);
 

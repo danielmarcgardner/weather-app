@@ -2,13 +2,15 @@ import React from 'react';
 import { func, string, bool } from 'prop-types';
 import './button.css';
 
+//Returns a standard button atom.
 export const Button = ({ onClick, className, disabled, text, color }) => (
-  <div
-    onClick={ onClick }
+  <button
+    onClick={ onClick ? onClick : null }
     className={ `button ${className ? className : ''} ${disabled ? 'is-disabled' : ''} is-${color}` }
+    tabIndex="0"
   >
     {text}
-  </div>
+  </button>
 );
 
 Button.propTypes = {
@@ -20,7 +22,6 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  onClick: () => console.error('Button is clicked but no onClick!'),
   text: 'Click Me!',
   disabled: false
 };

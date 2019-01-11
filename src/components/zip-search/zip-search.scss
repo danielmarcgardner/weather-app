@@ -1,0 +1,9 @@
+@import '../../styles/includes/includes.index.scss';
+
+.zip-search {
+  @extend %flex;
+
+  &__input {
+    width: 30rem;
+  }
+}
