@@ -4,3 +4,4 @@ dist/**
 public/
 config/coverage/
 src/serviceWorker.js
+build

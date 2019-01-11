@@ -11,7 +11,9 @@ describe('WeatherReducer', () => {
   });
   test('handles RECEIVE_ZIP', () => {
     expect(WeatherReducer(undefined, { type: 'RECEIVE_ZIP', data: { zip: '94122', ...testdata[0] } })).toEqual({ weatherZips: [testdata[0]] });
-    expect(WeatherReducer({ weatherZips: [testdata[0]] }, { type: 'RECEIVE_ZIP', data:{ zip: '94122', ...testdata[0], changed: true } })).toEqual({ weatherZips:[{ zip: '94122', ...testdata[0], changed: true }] });
+    expect(WeatherReducer({ weatherZips: [testdata[0]] }, { type: 'RECEIVE_ZIP', data:{ zip: '94122', ...testdata[0], changed: true } })).toEqual(
+      { weatherZips:[{ zip: '94122', ...testdata[0], changed: true }] }
+    );
     expect(WeatherReducer({ weatherZips: [testdata[0]] }, { type: 'RECEIVE_ZIP', data: { zip: '94121', ...testdata[1] } })).toEqual({ weatherZips: testdata });
   });
 });
