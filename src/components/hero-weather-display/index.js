@@ -15,7 +15,8 @@ export const HeroWeatherDisplay = ({ date, day, astro, close }) => (
       <div className="hero__moredata--item">
         <h5>Astro:</h5>
         <ul>
-          {/* Astro keys were easily deciphered as to what they were to the human eye so I mapped through them. The rest of the keys were not as easy to read to the human eye or included non standard measurements*/}
+          {/* Astro keys were easily deciphered as to what they were to the human eye so I mapped through them.
+            The rest of the keys were not as easy to read to the human eye or included non standard measurements */}
           {Object.keys(astro).map((sign, index) => <li key={ `astro-${index}` } className="hero__list--li">{`${sign.charAt(0).toUpperCase() + sign.slice(1)}: ${astro[sign]}`}</li>)}
         </ul>
       </div>
