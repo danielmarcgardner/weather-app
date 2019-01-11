@@ -1,9 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import { App } from './App';
+import { shallow } from 'enzyme';
+import { BrowserRouter } from 'react-router-dom';
+import Routes from '../../routes';
+import ZipRefreshWrapper from '../zip-refresh-wrapper';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe('<App />', () => {
+  const comp = shallow(<App />);
+  test('renders without crashing', () => {
+    expect(comp.find(BrowserRouter)).toExist();
+    expect(comp.find('.app')).toExist();
+    expect(comp.find(Routes)).toExist();
+    expect(comp.find(ZipRefreshWrapper).prop('interval')).toEqual(30000);
+  });
 });

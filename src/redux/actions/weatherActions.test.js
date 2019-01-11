@@ -13,7 +13,7 @@ describe('Weather Actions', () => {
     const data = { current: 'sunny' };
     const api = { Api: { getWeatherByZipCode: jest.fn(() => Promise.resolve({ data })) } };
 
-    await getWeatherByZipCode('94107', timestamp)(dispatch, getState, api);
+    await getWeatherByZipCode('94107')(dispatch, getState, api);
 
     expect(dispatch).toBeCalledWith({
       type: 'RECEIVE_ZIP',

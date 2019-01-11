@@ -22,5 +22,9 @@ describe('<FiveDayCard />', () => {
     //Clicking triggers the show more function
     comp.find('.fivedaycard__temps--viewmore').simulate('click');
     expect(props.showMore).toBeCalledWith(0);
+
+    //Testing default function prop that it does not throw an error for undefined prop
+    comp.setProps({ showMore: undefined });
+    comp.find('.fivedaycard__temps--viewmore').simulate('click');
   });
 });

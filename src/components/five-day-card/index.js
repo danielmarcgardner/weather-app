@@ -26,7 +26,7 @@ FiveDayCard.propTypes = {
 };
 
 FiveDayCard.defaultProps = {
-  showMore: () => {}
+  showMore: () => { /* DO NOTHING*/ }
 };
 
 export default FiveDayCard;
